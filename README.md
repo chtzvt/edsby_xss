@@ -1,7 +1,7 @@
 # Edsby XSS Proof-Of-Concept
 
 ~~Confirmed to work on Edsby instances with version numbers of at least 17431 and below (also seen as 1492092324).~~
-**Update:** This vulnerability has been fixed in a patch rolled out to all Edsby instances as of June 2017, very shortly after disclosure. Many thanks to COreFour for their prompt response to
+**Update:** This vulnerability has been fixed in a patch rolled out to all Edsby instances as of June 2017, very shortly after disclosure. Many thanks to CoreFour for their prompt response to
 the issue:)
 
 ## Overview
@@ -39,7 +39,7 @@ the link preview JSON (which is attached to the message submission) looks like t
  property is simply placed inside of the `<a>` tag without any kind of validation or escaping whatsoever. So, you can place any html
  you'd like to add to the DOM (including script elements) in here, and it will be rendered by the user's browser. Assuming that all
  of the other properties in this object remain unchanged, it'll still render as a normal link preview. Posts with XSS included are
- indistinguishable from other posts in your class feed (Scary!)
+ indistinguishable from other posts in your class feed (Scary!).
 
   _**Side note:** I have tested to see if you can post fake links by setting the URL as one value and href as another, but it doesn't seem to work._
 
